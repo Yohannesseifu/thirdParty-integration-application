@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20240604205531"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "operationName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "httpMethod",
+      "fieldType": "HttpMethod",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "POST,GET,PUT,PATCH,OPTIONS,NONE"
+    },
+    {
+      "fieldName": "endpointPath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestBodyTemplate",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Operation",
+  "relationships": [
+    {
+      "otherEntityName": "apiIntegration",
+      "otherEntityRelationshipName": "operation",
+      "relationshipName": "apiIntegration",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "responseOutput",
+      "otherEntityRelationshipName": "operation",
+      "relationshipName": "responseOutput",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "requestInput",
+      "otherEntityRelationshipName": "operation",
+      "relationshipName": "requestInput",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
