@@ -1,0 +1,11 @@
+id;input_name;input_type;data_type;test_value;default_value;auto_user_value;is_encoded;max_length;min_length;min_value;max_value;validation_pattern;is_required
+1;given complain suddenly;PATH;BOOLEAN;amidst;which woof advent;ACCOUNT_NUMBER;true;3910;17253;fizz;gratefully calmly;huzzah;false
+2;without;PATH;BOOLEAN;gateway frost hmph;delicious;NONE;true;6149;22491;punctuate aboard;pony although and;turbulent;true
+3;abaft prey;PATH;DATETIME;deputy until;fawn dependent;NONE;true;22257;19495;questioningly successfully;above besides science;meow suffer;true
+4;woot tergiversate cabinet;NONE;NONE;snappy enchanted;mysteriously administer;PHONE_NUMBER;false;2650;338;who;confute always entreat;of speakerphone;true
+5;low;BODY;STRING;husky;as;PHONE_NUMBER;true;22969;7795;unlike;dazzling;daily suspiciously;true
+6;where gently worriedly;BODY;DATETIME;like likewise stereotype;anti;PHONE_NUMBER;false;8478;4554;but since latex;atrium underneath retrospect;timetable zowie woot;false
+7;sure-footed psst;QUERY;BOOLEAN;sympathetically;if arid at;NONE;false;18247;15609;atop;abaft yum;times duh;true
+8;yuck;NONE;COLLECTION;coaxingly;ambulance gladly while;NONE;false;17714;12744;yippee;across toaster;dimly;false
+9;bah gosh tatami;NONE;INT;woot amidst;switching verbally;NONE;true;17059;16866;proprietor;gleefully trivial shrilly;water punctually on;false
+10;keenly brightly;NONE;BOOLEAN;blah er;aboard calm of;ACCOUNT_NUMBER;true;24857;26959;cadet;soulful;tandem oh;false

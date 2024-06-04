@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20240604203844"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "outputName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "COLLECTION,STRING,INT,DOUBLE,BOOLEAN,DATETIME,NONE"
+    },
+    {
+      "fieldName": "responseValuePath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "responseScope",
+      "fieldType": "Scope",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "RESPONSE,HEADER,ERROR,NONE"
+    },
+    {
+      "fieldName": "coreMapping",
+      "fieldType": "CoreMapping",
+      "fieldValues": "AMOUNT,CREDIT_ACCOUNT,REASON,NONE"
+    },
+    {
+      "fieldName": "expectedValue",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ResponseOutput",
+  "relationships": [
+    {
+      "otherEntityName": "operation",
+      "otherEntityRelationshipName": "responseOutput",
+      "relationshipName": "operation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

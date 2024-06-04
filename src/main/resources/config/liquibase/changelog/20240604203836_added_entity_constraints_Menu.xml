@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Menu.
+    -->
+    <changeSet id="20240604203836-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="menu_id"
+                                 baseTableName="rel_menu__dynamic_payment_menus"
+                                 constraintName="fk_rel_menu__dynamic_payment_menus__menu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="menu"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="dynamic_payment_menus_id"
+                                 baseTableName="rel_menu__dynamic_payment_menus"
+                                 constraintName="fk_rel_menu__dynamic_payment_menus__dynamic_payment_menus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="third_party_integration"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="menu"
+                                 constraintName="fk_menu__parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="menu"
+                                 />
+    </changeSet>
+</databaseChangeLog>
