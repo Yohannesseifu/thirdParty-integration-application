@@ -1,0 +1,11 @@
+id;output_name;data_type;response_value_path;response_scope;core_mapping;expected_value
+1;fooey extremely until;COLLECTION;after ack between;NONE;AMOUNT;reallocate
+2;whenever visit;DOUBLE;gah;HEADER;CREDIT_ACCOUNT;ick
+3;yuck;STRING;boohoo;RESPONSE;CREDIT_ACCOUNT;litigation gasp
+4;like;INT;from distance lest;NONE;CREDIT_ACCOUNT;majestically
+5;boohoo wag;NONE;audit against ha;NONE;NONE;readily evince brr
+6;skulk colossal stark;COLLECTION;boohoo phooey chair;NONE;CREDIT_ACCOUNT;carelessly
+7;cobbler elastic blockade;DOUBLE;partition although invoke;RESPONSE;AMOUNT;wholly
+8;supposing forebear stain;COLLECTION;overwork elimination;NONE;REASON;gee gah
+9;definite;DATETIME;warlock;ERROR;NONE;powder lest next
+10;along excepting er;NONE;cushion how;NONE;CREDIT_ACCOUNT;an dismiss whoever

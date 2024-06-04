@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20240604204300"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ContentType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "JSON,SOAP,XML,NONE"
+    },
+    {
+      "fieldName": "auth",
+      "fieldType": "AuthType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NONE,BASIC,BEARER,OAUTH"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "timeout",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "retryRetries",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "retryDelay",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ApiIntegration",
+  "relationships": [
+    {
+      "otherEntityName": "operation",
+      "otherEntityRelationshipName": "apiIntegration",
+      "relationshipName": "operation",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
