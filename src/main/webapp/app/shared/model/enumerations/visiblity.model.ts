@@ -1,0 +1,11 @@
+export enum Visiblity {
+  EVERYONE = 'EVERYONE',
+
+  FOR_STUFF = 'FOR_STUFF',
+
+  VIP_CUSTOMERS = 'VIP_CUSTOMERS',
+
+  FOR_TESTERS = 'FOR_TESTERS',
+
+  NONE = 'NONE',
+}
