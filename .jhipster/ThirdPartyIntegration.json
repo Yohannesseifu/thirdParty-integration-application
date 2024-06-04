@@ -1,0 +1,90 @@
+{
+  "annotations": {
+    "changelogDate": "20240604205908"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "isDraft",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "integrationName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iconPath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "accountNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "minimumAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "maximumAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "currencyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentConfirmationTemplate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentDetailTemplate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "integrationCategory",
+      "fieldType": "IntegrationType",
+      "fieldValues": "PAYMENT,TRANSFER,NONE"
+    },
+    {
+      "fieldName": "visiblity",
+      "fieldType": "Visiblity",
+      "fieldValues": "EVERYONE,FOR_STUFF,VIP_CUSTOMERS,FOR_TESTERS,NONE"
+    },
+    {
+      "fieldName": "confirmRecipientIdentity",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "ThirdPartyIntegration",
+  "relationships": [
+    {
+      "otherEntityName": "formUi",
+      "otherEntityRelationshipName": "thirdPartyIntegration",
+      "relationshipName": "formUi",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "dynamicPaymentMenus",
+      "relationshipName": "categoryMenus",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
