@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20240604204432"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "field_ui_meta_data",
+  "fields": [
+    {
+      "fieldName": "label",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inputInterface",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validationPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "options",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "displayOptions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conditions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "translations",
+      "fieldType": "String"
+    }
+  ],
+  "name": "FieldUIMetaData",
+  "relationships": [
+    {
+      "otherEntityName": "field",
+      "otherEntityRelationshipName": "fieldUIMetaData",
+      "relationshipName": "field",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
