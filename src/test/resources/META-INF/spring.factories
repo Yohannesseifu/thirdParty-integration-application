@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = com.cbe.mobile.\
+    banking.thirdparty.payment.integration.config.\
+    SqlTestContainersSpringContextCustomizerFactory
