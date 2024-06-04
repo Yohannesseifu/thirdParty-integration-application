@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20240604204433"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "formName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "formDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "formType",
+      "fieldType": "FormType",
+      "fieldValues": "INIT,REMARK,NONE"
+    },
+    {
+      "fieldName": "stepOrder",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "FormUi",
+  "relationships": [
+    {
+      "otherEntityName": "field",
+      "otherEntityRelationshipName": "formUi",
+      "relationshipName": "field",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "thirdPartyIntegration",
+      "otherEntityRelationshipName": "formUi",
+      "relationshipName": "thirdPartyIntegration",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
