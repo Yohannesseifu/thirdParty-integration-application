@@ -1,0 +1,11 @@
+id;name;data_type;is_unique;max_length;min_length;min_value;max_value;is_required;sort_order
+1;mochi;DATETIME;true;16466;15730;impressive wingman boast;next boohoo salt;true;11848
+2;lacerate;INT;false;32130;27802;transact;trifling yuck stack;false;419
+3;establishment ocean;INT;true;411;11452;although ha gadzooks;doughnut modulo tomorrow;true;27910
+4;diving;BOOLEAN;true;32022;6625;gah;sadly;true;20374
+5;prevent freon prestigious;BOOLEAN;false;15178;20208;silently insight lobotomy;outplay which jovially;true;28478
+6;idealise narrow;BOOLEAN;false;8081;20455;rehear;plot;true;25912
+7;weakly among knit;DATETIME;false;8102;9216;anenst;symptomize how;false;12995
+8;buzzing;INT;true;29839;6892;idolized fill likewise;since;false;11265
+9;gosh;DATETIME;true;20494;28547;official unnaturally how;sparse;false;30580
+10;boastfully;DATETIME;false;15465;26579;pfft spasm next;apropos;false;27849
