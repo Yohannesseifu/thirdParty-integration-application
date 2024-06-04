@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20240604204035"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "menuName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "menuDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iconPath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Menu",
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "children",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "thirdPartyIntegration",
+      "otherEntityRelationshipName": "categoryMenus",
+      "relationshipName": "dynamicPaymentMenus",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "children",
+      "relationshipName": "parent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
