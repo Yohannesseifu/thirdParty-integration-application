@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20240604204044"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "operationType",
+      "fieldType": "OperationType",
+      "fieldValues": "FETCH,NOTIFY,NONE"
+    }
+  ],
+  "name": "IntegrationOperation",
+  "relationships": [
+    {
+      "otherEntityName": "thirdPartyIntegration",
+      "relationshipName": "thirdPartyIntegration",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "operation",
+      "relationshipName": "operation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "integrationFieldMapping",
+      "otherEntityRelationshipName": "integrationOperation",
+      "relationshipName": "integrationFieldMapping",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
