@@ -1,0 +1,72 @@
+{
+  "annotations": {
+    "changelogDate": "20240604212234"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValues": "COLLECTION,STRING,INT,DOUBLE,BOOLEAN,DATETIME,NONE"
+    },
+    {
+      "fieldName": "isUnique",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "maxLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maxValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRequired",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "sortOrder",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Field",
+  "relationships": [
+    {
+      "otherEntityName": "formUi",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "formUi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "fieldUIMetaData",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "metaData",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "integrationFieldMapping",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "integrationFieldMapping",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
