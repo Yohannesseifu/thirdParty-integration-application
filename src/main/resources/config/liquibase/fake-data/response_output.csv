@@ -1,0 +1,11 @@
+id;output_name;data_type;response_value_path;response_scope;core_mapping;constant_value_to_compare;operator_to_compare_value;is_required
+1;fooey extremely until;COLLECTION;after ack between;NONE;AMOUNT;reallocate;LESS_THAN;true
+2;helplessly;STRING;er;ERROR;REASON;zowie;NONE;true
+3;nightclub;STRING;against phew er;ERROR;REASON;gosh;NOT_EQUAL_TO;false
+4;nearly fervently geez;DOUBLE;gosh whistle;NONE;AMOUNT;zip keenly;NONE;true
+5;buffalo;COLLECTION;turban;NONE;NONE;between blanket;OBJECT_NOT_EQUAL_TO;true
+6;tamale dye;INT;bah like fooey;ERROR;REASON;if;NOT_EQUAL_TO;false
+7;ephemera fooey;BOOLEAN;elastic;RESPONSE;NONE;confirmation workforce brightly;LESS_THAN;false
+8;unnecessarily;BOOLEAN;bleakly dynasty nicety;HEADER;AMOUNT;painfully compost juvenile;NOT_EQUAL_TO;false
+9;cuckoo utility;STRING;energetically wild aggressive;ERROR;REASON;artifact belated;GREATER_THAN_OR_EQUAL_TO;true
+10;furthermore author tranquilize;DATETIME;aggravating;ERROR;CREDIT_ACCOUNT;that;LESS_THAN_OR_EQUAL_TO;false
