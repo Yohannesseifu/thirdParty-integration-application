@@ -1,0 +1,277 @@
+
+
+entity Menu {
+  menuName String ,
+  menuDescription String,
+  iconPath String,
+  enabled Boolean,
+}
+
+
+entity ThirdPartyIntegration {
+    isDraft Boolean,
+    integrationName String,
+    companyName String,
+    description String,
+    iconPath String,
+    enabled Boolean,
+    accountNumber String, // payment transfer to
+    minimumAmount Double,
+    maximumAmount Double,
+    currencyCode String,
+    paymentConfirmationTemplate String,
+    paymentDetailTemplate String,
+    integrationCategory IntegrationType, // PAYMENT or TRANSFER
+    visiblity Visiblity,
+    confirmRecipientIdentity Boolean
+  }
+
+
+//flow based its Port with port type output
+ entity Field {
+   name String,
+   dataType DataType, //may be enum string , float , double
+   isUnique Boolean,
+   maxLength Integer //only for type-string , text and  uuid 
+   minLength Integer, //only for type-string , text and  uuid
+   minValue String, //for Numbers , like double integer
+   maxValue String, //for Numbers , like double integer
+   isRequired Boolean,
+   sortOrder Long,
+ }
+ 
+ entity FieldUIMetaData {
+   label String, 
+   inputInterface String , //enum example INPUT, CHECK_BOX ,select-dropdown
+   width String , // full , half 
+   note String,
+   validationPattern String, //for Strings
+    //json
+   options String,
+   displayOptions String,
+   conditions String,
+   translations String,
+ }
+ 
+ entity FormUi{
+    formName String,
+    formDescription String,
+    formType FormType, // enum: INIT, REMARK, etc.
+    stepOrder Integer
+ }
+
+
+entity ApiIntegration { //Datasource
+    name String required,
+    url String required,
+    type ContentType required,
+    auth AuthType required,
+    description String,
+    version String maxlength(50),
+    timeout Integer,
+    retryRetries Integer,
+    retryDelay Integer
+}
+
+entity Operation {
+    operationName String required,
+    httpMethod HttpMethod required,
+    endpointPath String required,
+    requestBodyTemplate String
+}
+//flow based its Port with port type input
+entity RequestInput {
+    inputName String required,
+    inputType RequestInputType required,
+    dataType DataType required,
+    testValue String,
+    defaultValue String, //constant value
+    autoUserValue  AutoUserValue, //phone number ,account number
+    isEncoded Boolean,
+    maxLength Integer //only for type-string , text and  uuid 
+    minLength Integer, //only for type-string , text and  uuid
+    minValue String, //for Numbers , like double integer
+    maxValue String, //for Numbers , like double integer
+    validationPattern String,  //for Strings
+    isRequired Boolean,
+    
+}
+//flow based its Port with port type output
+entity ResponseOutput {
+    outputName String required,
+    dataType DataType required,
+    responseValuePath String required,
+    responseScope Scope required,
+    coreMapping CoreMapping, //amount creadit 
+    
+    //for compare
+    constantValueToCompare String,
+    operatorToCompareValue LogicalOperator, 
+    isRequired Boolean,
+}
+
+entity IntegrationOperation {
+   operationType OperationType // FETCH or NOTIFY
+}
+
+//in flow based its connection
+entity IntegrationFieldMapping {
+    // Attributes and relationships can be defined here as needed
+}
+
+//create packet Integrated IntegrationFieldMapping
+
+
+enum IntegrationType {
+// Payment ("bill or tiket or other fixed amount") 
+// transfer ("amount set by customer not 3rd party eg. wallets")
+	PAYMENT,
+	TRANSFER,
+    NONE
+}
+
+enum RequestInputType {
+    HEADER,
+    BODY,
+    QUERY,
+    PATH,
+    NONE
+}
+enum Scope {
+    RESPONSE,
+    HEADER,
+    ERROR,
+    NONE
+}
+
+enum DataType {
+    COLLECTION,
+    STRING,
+    INT,
+    DOUBLE,
+    BOOLEAN,
+    DATETIME,
+    NONE
+}
+
+enum HttpMethod {
+    POST,
+    GET,
+    PUT,
+    PATCH,
+    OPTIONS,
+    NONE
+}
+
+enum ContentType {
+    JSON,
+    SOAP,
+    XML,
+    NONE
+}
+
+enum AuthType {
+    NONE,
+    BASIC,
+    BEARER,
+    OAUTH,
+    NONE
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH, NONE
+}
+
+enum FormType {
+    INIT,
+    REMARK,
+    NONE
+}
+
+enum OperationType {
+    FETCH,
+    NOTIFY,
+    NONE
+
+}
+enum AutoUserValue {
+    PHONE_NUMBER,
+    ACCOUNT_NUMBER,
+    NONE
+}
+enum Visiblity {
+    EVERYONE,
+    FOR_STUFF
+    VIP_CUSTOMERS,
+    FOR_TESTERS,
+    NONE
+}
+
+enum CoreMapping{
+    AMOUNT,
+    CREDIT_ACCOUNT,
+    REASON,
+    NONE
+}
+
+enum LogicalOperator{
+  EQUAL_TO, 
+  NOT_EQUAL_TO,
+  OBJECT_ EQUAL_TO,
+  OBJECT_NOT_EQUAL_TO,
+  GREATER_THAN,
+  LESS_THAN,
+  GREATER_THAN_OR_EQUAL_TO,
+  LESS_THAN_OR_EQUAL_TO,
+  NONE
+}
+
+relationship ManyToOne {
+   ResponseOutput to Operation // //need Cascade all
+}
+
+relationship ManyToOne {
+  RequestInput to Operation //need Cascade all
+}
+
+relationship ManyToOne {
+  Operation to ApiIntegration,  //need Cascade all
+}
+
+relationship ManyToOne {
+  FormUi to ThirdPartyIntegration  //need Cascade all
+}
+
+relationship ManyToOne{
+    Field to FormUi    //need Cascade all
+}
+
+relationship OneToMany {
+  FieldUIMetaData{field} to Field{metaData}  //no cascade
+}
+
+//relationship ManyToMany { Field to RequestInput }
+
+relationship ManyToOne {
+    IntegrationOperation{thirdPartyIntegration} to ThirdPartyIntegration // no need just null
+    IntegrationOperation{operation} to Operation // no need just null
+}
+
+relationship ManyToOne {
+    IntegrationFieldMapping to IntegrationOperation
+    IntegrationFieldMapping to Field
+    IntegrationFieldMapping to RequestInput
+}
+
+relationship OneToMany {
+    Menu{children} to Menu{parent}
+}
+
+relationship ManyToMany {
+    Menu{dynamicPaymentMenus} to ThirdPartyIntegration{categoryMenus}
+}
+
+
+service all with serviceImpl
+dto all with mapstruct
+
