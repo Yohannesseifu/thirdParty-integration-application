@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240610120608"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "key",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Header",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,11 @@
+id;input_name;input_type;data_type;test_value;default_value;auto_user_value;is_encoded;max_length;min_length;min_value;max_value;validation_pattern;is_required;value_from_transaction
+f328beb7-d0f4-4582-8020-8d6caa043dd4;but;NONE;COLLECTION;hearty anarchy lest;defiantly savage huzzah;ACCOUNT_NUMBER;false;368;5011;percent downforce gee;below with;unless incidentally;false;TRANSACTION_DETAIL
+71c560e1-932c-46a7-832f-960b84073057;only cleverly prestigious;PATH;INT;modulo eek fawn;thoroughly;PHONE_NUMBER;false;19495;17870;songbird runny above;caramelize option meow;fen;false;TRANSACTION_DETAIL
+bf6e2671-006b-4e74-b622-51ef8528cdbc;now meh for;NONE;COLLECTION;gosh;wring barring worth;PHONE_NUMBER;true;5803;22287;meh whose;furthermore unabashedly outrun;warmly across;true;TRANSACTION_AMOUNT
+af8d29b2-2a31-4211-adc2-1c1f23a708c9;soggy;HEADER;COLLECTION;ascend;tinted supervision unnaturally;NONE;true;13760;5460;behind;whose;afore questioningly aw;true;TRANSACTION_ID
+f253806b-f28b-48c3-bed3-c8a2e2ef5e76;sure-footed psst;QUERY;BOOLEAN;sympathetically;if arid at;NONE;false;18247;15609;atop;abaft yum;times duh;true;TRANSACTION_DETAIL
+15f4e70e-138c-4dbb-811e-8477900bb7a3;while;PATH;BOOLEAN;dreary evidence;ouch;NONE;false;4422;2780;whose;political;entertain furnish;true;TRANSACTION_ID
+b22ed653-cfe3-4266-a5b1-cfe281d36ee2;among utilized;QUERY;INT;trained slushy water;meanwhile mmm yuck;ACCOUNT_NUMBER;true;2807;22481;fit ah the;credibility;tightly implode;false;NONE
+084ab751-5bfb-44de-8c8e-015aeeace623;wholly via mmm;QUERY;DOUBLE;when fixed;as mmm theism;PHONE_NUMBER;true;25692;1470;yowza;the;inborn that;false;NONE
+eba8b7c5-76c8-4398-ba5c-7e3bfa2d3da1;duh;QUERY;DATETIME;excluding gadzooks gosh;bin networking;ACCOUNT_NUMBER;false;9679;18759;anneal including good;fumbling zowie;yum shrilly;false;TRANSACTION_DETAIL
+c02cb4fc-2f0d-4e95-bb4d-17795ea411c1;beyond;HEADER;DATETIME;acclaimed;gee gee until;PHONE_NUMBER;false;26882;30575;registration;dozen;but diligently;false;TRANSACTION_ID

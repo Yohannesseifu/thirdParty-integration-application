@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20240610120606"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "computedPaymentDetail",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    }
+  ],
+  "name": "PaymentDetail",
+  "relationships": [
+    {
+      "otherEntityName": "apiRequest",
+      "otherEntityRelationshipName": "paymentDetail",
+      "relationshipName": "apiRequest",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "paymentParam",
+      "relationshipName": "paymentParams",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "operation",
+      "otherEntityRelationshipName": "paymentDetail",
+      "relationshipName": "operation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

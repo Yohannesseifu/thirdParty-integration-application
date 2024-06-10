@@ -1,0 +1,25 @@
+package com.cbe.mobile.banking.thirdparty.payment.integration.service.dto;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import com.cbe.mobile.banking.thirdparty.payment.integration.web.rest.TestUtil;
+import java.util.UUID;
+import org.junit.jupiter.api.Test;
+
+class FieldDTOTest {
+
+    @Test
+    void dtoEqualsVerifier() throws Exception {
+        TestUtil.equalsVerifier(FieldDTO.class);
+        FieldDTO fieldDTO1 = new FieldDTO();
+        fieldDTO1.setId(UUID.randomUUID());
+        FieldDTO fieldDTO2 = new FieldDTO();
+        assertThat(fieldDTO1).isNotEqualTo(fieldDTO2);
+        fieldDTO2.setId(fieldDTO1.getId());
+        assertThat(fieldDTO1).isEqualTo(fieldDTO2);
+        fieldDTO2.setId(UUID.randomUUID());
+        assertThat(fieldDTO1).isNotEqualTo(fieldDTO2);
+        fieldDTO1.setId(null);
+        assertThat(fieldDTO1).isNotEqualTo(fieldDTO2);
+    }
+}

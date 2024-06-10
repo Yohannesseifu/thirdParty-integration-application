@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20240610120611"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    }
+  ],
+  "name": "IntegrationFieldMapping",
+  "relationships": [
+    {
+      "otherEntityName": "integrationOperation",
+      "otherEntityRelationshipName": "integrationFieldMapping",
+      "relationshipName": "integrationOperation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "field",
+      "otherEntityRelationshipName": "integrationFieldMapping",
+      "relationshipName": "field",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "requestInput",
+      "otherEntityRelationshipName": "integrationFieldMapping",
+      "relationshipName": "requestInput",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

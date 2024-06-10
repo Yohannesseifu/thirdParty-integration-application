@@ -1,0 +1,49 @@
+{
+  "annotations": {
+    "changelogDate": "20240610120609"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "uri",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "body",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "HttpMethod",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "POST,GET,PUT,PATCH,OPTIONS,NONE"
+    }
+  ],
+  "name": "ApiRequest",
+  "relationships": [
+    {
+      "otherEntityName": "header",
+      "relationshipName": "headers",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paymentDetail",
+      "otherEntityRelationshipName": "apiRequest",
+      "relationshipName": "paymentDetail",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

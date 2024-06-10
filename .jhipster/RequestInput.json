@@ -1,0 +1,98 @@
+{
+  "annotations": {
+    "changelogDate": "20240610120604"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "inputName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "inputType",
+      "fieldType": "RequestInputType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "HEADER,BODY,QUERY,PATH,NONE"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "COLLECTION,STRING,INT,DOUBLE,BOOLEAN,DATETIME,NONE"
+    },
+    {
+      "fieldName": "testValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "defaultValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autoUserValue",
+      "fieldType": "AutoUserValue",
+      "fieldValues": "PHONE_NUMBER,ACCOUNT_NUMBER,NONE"
+    },
+    {
+      "fieldName": "isEncoded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "maxLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maxValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validationPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRequired",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "valueFromTransaction",
+      "fieldType": "TransactionParams",
+      "fieldValues": "TRANSACTION_ID,TRANSACTION_DETAIL,TRANSACTION_AMOUNT,NONE"
+    }
+  ],
+  "name": "RequestInput",
+  "relationships": [
+    {
+      "otherEntityName": "operation",
+      "otherEntityRelationshipName": "requestInput",
+      "relationshipName": "operation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "integrationFieldMapping",
+      "otherEntityRelationshipName": "requestInput",
+      "relationshipName": "integrationFieldMapping",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
