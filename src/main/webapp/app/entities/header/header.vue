@@ -1,0 +1,108 @@
+<template>
+  <div>
+    <h2 id="page-heading" data-cy="HeaderHeading">
+      <span id="header-heading">Headers</span>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-info mr-2" v-on:click="handleSyncList" :disabled="isFetching">
+          <font-awesome-icon icon="sync" :spin="isFetching"></font-awesome-icon> <span>Refresh list</span>
+        </button>
+        <router-link :to="{ name: 'HeaderCreate' }" custom v-slot="{ navigate }">
+          <button
+            @click="navigate"
+            id="jh-create-entity"
+            data-cy="entityCreateButton"
+            class="btn btn-primary jh-create-entity create-header"
+          >
+            <font-awesome-icon icon="plus"></font-awesome-icon>
+            <span>Create a new Header</span>
+          </button>
+        </router-link>
+      </div>
+    </h2>
+    <br />
+    <div class="alert alert-warning" v-if="!isFetching && headers && headers.length === 0">
+      <span>No Headers found</span>
+    </div>
+    <div class="table-responsive" v-if="headers && headers.length > 0">
+      <table class="table table-striped" aria-describedby="headers">
+        <thead>
+          <tr>
+            <th scope="row"><span>ID</span></th>
+            <th scope="row"><span>Name</span></th>
+            <th scope="row"><span>Value Str</span></th>
+            <th scope="row"><span>Api Request</span></th>
+            <th scope="row"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="header in headers" :key="header.id" data-cy="entityTable">
+            <td>
+              <router-link :to="{ name: 'HeaderView', params: { headerId: header.id } }">{{ header.id }}</router-link>
+            </td>
+            <td>{{ header.name }}</td>
+            <td>{{ header.valueStr }}</td>
+            <td>
+              <div v-if="header.apiRequest">
+                <router-link :to="{ name: 'ApiRequestView', params: { apiRequestId: header.apiRequest.id } }">{{
+                  header.apiRequest.id
+                }}</router-link>
+              </div>
+            </td>
+            <td class="text-right">
+              <div class="btn-group">
+                <router-link :to="{ name: 'HeaderView', params: { headerId: header.id } }" custom v-slot="{ navigate }">
+                  <button @click="navigate" class="btn btn-info btn-sm details" data-cy="entityDetailsButton">
+                    <font-awesome-icon icon="eye"></font-awesome-icon>
+                    <span class="d-none d-md-inline">View</span>
+                  </button>
+                </router-link>
+                <router-link :to="{ name: 'HeaderEdit', params: { headerId: header.id } }" custom v-slot="{ navigate }">
+                  <button @click="navigate" class="btn btn-primary btn-sm edit" data-cy="entityEditButton">
+                    <font-awesome-icon icon="pencil-alt"></font-awesome-icon>
+                    <span class="d-none d-md-inline">Edit</span>
+                  </button>
+                </router-link>
+                <b-button
+                  v-on:click="prepareRemove(header)"
+                  variant="danger"
+                  class="btn btn-sm"
+                  data-cy="entityDeleteButton"
+                  v-b-modal.removeEntity
+                >
+                  <font-awesome-icon icon="times"></font-awesome-icon>
+                  <span class="d-none d-md-inline">Delete</span>
+                </b-button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <b-modal ref="removeEntity" id="removeEntity">
+      <template #modal-title>
+        <span id="thirdPartyIntegrationApplicationApp.header.delete.question" data-cy="headerDeleteDialogHeading"
+          >Confirm delete operation</span
+        >
+      </template>
+      <div class="modal-body">
+        <p id="jhi-delete-header-heading">Are you sure you want to delete Header {{ removeId }}?</p>
+      </div>
+      <template #modal-footer>
+        <div>
+          <button type="button" class="btn btn-secondary" v-on:click="closeDialog()">Cancel</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="jhi-confirm-delete-header"
+            data-cy="entityConfirmDeleteButton"
+            v-on:click="removeHeader()"
+          >
+            Delete
+          </button>
+        </div>
+      </template>
+    </b-modal>
+  </div>
+</template>
+
+<script lang="ts" src="./header.component.ts"></script>

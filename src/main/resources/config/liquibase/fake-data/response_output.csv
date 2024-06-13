@@ -1,0 +1,11 @@
+id;output_name;data_type;response_value_path;response_scope;transfer_core_mapping;is_logic_field;constant_value_to_compare;operator_to_compare_value;is_required
+ff09a553-e768-4b03-809e-449b0e4cb12f;faint tune-up gyro;DATETIME;even because scratchy;RESPONSE;NONE;true;can nightclub;NOT_EQUAL_TO;false
+042b001f-d215-49c0-b7c9-58ea952e62e9;classic;STRING;fervently geez;ERROR;CREDIT_ACCOUNT;true;twilight avenge unless;NONE;false
+fdc226e7-0093-4b04-a113-31b0bbefd88a;alongside;NONE;brr;ERROR;NONE;true;dye digit whose;LESS_THAN_OR_EQUAL_TO;false
+53339f3a-8004-4ec8-8742-c649a2ee41ed;whose whether confirmation;LONG;safely;NONE;AMOUNT;false;invoke;EQUAL_TO;true
+3dacab7f-f10e-4f0a-89d4-59a35b962d0d;overwork elimination;DATETIME;how shorten;HEADER;CREDIT_ACCOUNT;true;before warlock hamper;GREATER_THAN;true
+a9845248-e0a4-4ec9-8c1c-4ec011483b66;jibe;LONG;wherever experience outface;RESPONSE;CREDIT_ACCOUNT;false;discontinue;GREATER_THAN;false
+7f366198-b462-4e09-81c3-b52eb10e40b9;innocently frantically phooey;DOUBLE;finally brr mmm;HEADER;CREDIT_ACCOUNT;false;helplessly;NONE;true
+a3aed909-3e61-403c-9b7f-11ddd2e32f31;cleverly abaft;DOUBLE;tomography peppery;ERROR;AMOUNT;true;scripture briefly;NOT_EQUAL_TO;true
+c9aea21d-a8ba-4bc4-b559-ff5b2d6dd893;duh nominate;COLLECTION;academy waistband;RESPONSE;CREDIT_ACCOUNT;false;furthermore after aside;NONE;false
+5d3fdc39-2a99-4c06-8e4a-8e272b7c0eb7;nor;DOUBLE;quarter;RESPONSE;REASON;true;knowingly yuck thought;GREATER_THAN_OR_EQUAL_TO;true

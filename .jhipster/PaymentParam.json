@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20240613142307"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "PaymentParamType",
+      "fieldValues": "USER_INPUT,FETCH_RESPONSE,NONE"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "valueStr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "COLLECTION,STRING,INT,LONG,DOUBLE,BOOLEAN,DATETIME,NONE"
+    }
+  ],
+  "name": "PaymentParam",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

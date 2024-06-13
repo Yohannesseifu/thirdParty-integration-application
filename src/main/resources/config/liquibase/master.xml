@@ -17,7 +17,33 @@
     <property name="datetimeType" value="datetime" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142257_added_entity_Menu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142258_added_entity_ThirdPartyIntegration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142259_added_entity_Field.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142300_added_entity_FieldUIMetaData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142301_added_entity_FormUi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142302_added_entity_ApiIntegration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142303_added_entity_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142304_added_entity_RequestInput.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142305_added_entity_ResponseOutput.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142306_added_entity_PaymentDetail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142307_added_entity_PaymentParam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142308_added_entity_Header.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142309_added_entity_ApiRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142310_added_entity_IntegrationOperation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142311_added_entity_IntegrationFieldMapping.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20240613142257_added_entity_constraints_Menu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142259_added_entity_constraints_Field.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142301_added_entity_constraints_FormUi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142303_added_entity_constraints_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142304_added_entity_constraints_RequestInput.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142305_added_entity_constraints_ResponseOutput.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142306_added_entity_constraints_PaymentDetail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142307_added_entity_constraints_PaymentParam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142308_added_entity_constraints_Header.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142310_added_entity_constraints_IntegrationOperation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240613142311_added_entity_constraints_IntegrationFieldMapping.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,11 @@
+id;input_name;input_type;data_type;test_value;default_value;value_source;is_encoded;max_length;min_length;min_value;max_value;validation_pattern;is_required
+f328beb7-d0f4-4582-8020-8d6caa043dd4;but;NONE;COLLECTION;hearty anarchy lest;defiantly savage huzzah;TRANSACTION_AMOUNT;false;368;5011;percent downforce gee;below with;unless incidentally;false
+471c560e-1932-4c6a-9732-f960b8407305;quaintly;QUERY;INT;while immediate;modulo eek fawn;TRANSACTION_ID;false;28572;30646;ugh questioningly;runny above besides;option;true
+5473784c-6b26-4d5e-94bf-6e2671006be7;psst snappy;PATH;NONE;before consequently without;absent;CUSTOMER_ACCOUNT;false;27535;207;bonus huzzah coin;liberalise along low;excepting;false
+61a26196-117b-432f-a888-81e059af8d29;against;NONE;DATETIME;rapidly;wastebasket altruistic;USER_INPUT;true;31967;12337;vow knowing venture;hoax and inasmuch;frost;true
+b118fc23-9d10-4735-a812-f253806bf28b;gadzooks trail regarding;BODY;BOOLEAN;gadzooks quizzical sympathetically;when er;CUSTOMER_PHONE;true;16310;7609;readies as sans;bespeak;politely box;true
+f4e70e13-8cdb-4b11-be84-77900bb7a304;present nudge along;BODY;STRING;ick before;for;CUSTOMER_PHONE;false;20708;20747;entertain furnish;woot amidst;switching verbally;false
+28828742-22bd-45c9-bbe7-4bc59caddf99;if amortize;BODY;DOUBLE;mmm yuck;brightly along;TRANSACTION_AMOUNT;false;2669;9351;yum credibility;tightly implode;jettison atop calmly;true
+aeeace62-30be-4ff1-942f-7c0b7dfde852;dearly tendency discourse;HEADER;DOUBLE;flow;theism exercise pedal;CUSTOMER_EMAIL;true;26422;15670;involve majestically;male save;for towards;true
+da1c34b4-0aaa-48cd-854f-fd76e1f3e8a6;supposing globalize till;BODY;DOUBLE;anneal including good;fumbling zowie;CUSTOMER_PHONE;false;32655;11165;routine anthropology;underpin;storage;true
+7795ea41-1c1d-40e9-b73e-d52b2ad6a8f0;alias stopsign;BODY;BOOLEAN;trust hmph;taper basil probation;TRANSACTION_AMOUNT;true;24175;3581;hard;strictly stub;greedy toward;true

@@ -1,0 +1,377 @@
+
+
+
+
+entity Menu {
+  @Id id UUID, 
+  menuName String ,
+  menuDescription String,
+  iconPath String,
+  enabled Boolean,
+}
+
+
+entity ThirdPartyIntegration {
+    @Id id UUID, 
+    isDraft Boolean,
+    integrationName String,
+    companyName String,
+    description String,
+    iconPath String,
+    enabled Boolean,
+    accountNumber String, // payment transfer to
+    minimumAmount Double,
+    maximumAmount Double,
+    currencyCode String,
+    paymentConfirmationTemplate String,
+    paymentSuccessTemplate String,
+    paymentErrorTemplate String,
+    integrationCategory IntegrationType, // PAYMENT or TRANSFER
+    visiblity Visiblity,
+    confirmRecipientIdentity Boolean
+  }
+  
+
+//flow based its Port with port type output
+ entity Field {
+   @Id id UUID, 
+   name String,
+   dataType DataType, //may be enum string , float , double
+   isUnique Boolean,
+   maxLength Integer //only for type-string , text and  uuid 
+   minLength Integer, //only for type-string , text and  uuid
+   minValue String, //for Numbers , like double integer
+   maxValue String, //for Numbers , like double integer
+   isRequired Boolean,
+   transferCoreMapping CoreTransferParams, //amount , reason , remark  for transfers
+   sortOrder Long,
+ }
+ 
+ entity FieldUIMetaData {
+   @Id id UUID, 
+   label String, 
+   inputInterface String , //enum example INPUT, CHECK_BOX ,select-dropdown
+   width String , // full , half 
+   note String,
+   validationPattern String, //for Strings
+    //json
+   options String,
+   displayOptions String,
+   conditions String,
+   translations String,
+ }
+ 
+ entity FormUi{
+    @Id id UUID, 
+    formName String,
+    formDescription String,
+    formType FormType, // enum: INIT, REMARK, etc.
+    stepOrder Integer
+ }
+
+//renme to 
+entity ApiIntegration { //Datasource
+    @Id id UUID, 
+    name String required,
+    url String required,
+    type ContentType required,
+    auth AuthType required,
+    description String,
+    version String maxlength(50),
+    timeout Integer,
+    retryRetries Integer,
+    retryDelay Integer
+    
+    //common request aparmes like user name password 
+}
+
+//ApiOperation
+entity Operation {
+    @Id id UUID, 
+    operationName String required,
+    httpMethod HttpMethod required,
+    endpointPath String required,
+    requestBodyTemplate String
+}
+//flow based its Port with port type input
+//OperarionRequestInput
+entity RequestInput {
+    @Id id UUID, 
+    inputName String required,
+    inputType RequestInputType required,
+    dataType DataType required,
+    testValue String,
+    defaultValue String, //constant value
+    valueSource  RequestValueSource, //phone number ,account number
+    isEncoded Boolean,
+    maxLength Integer //only for type-string , text and  uuid 
+    minLength Integer, //only for type-string , text and  uuid
+    minValue String, //for Numbers , like double integer
+    maxValue String, //for Numbers , like double integer
+    validationPattern String,  //for Strings
+    isRequired Boolean,
+}
+
+//set value from
+// value from (From User, from Payment detail ,from fetch input , From transaction )
+
+
+
+//flow based its Port with port type output
+//OperarionResponseOutput
+entity ResponseOutput {
+    @Id id UUID, 
+    outputName String required,
+    dataType DataType required,
+    responseValuePath String required,
+    responseScope Scope required,
+    transferCoreMapping CoreTransferParams, //amount creadit account for payments 
+    isLogicField Boolean,
+ 
+    //for compare
+    constantValueToCompare String,
+    operatorToCompareValue LogicalOperator, 
+    isRequired Boolean,
+   
+}
+
+entity PaymentDetail {
+    @Id id UUID,
+    computedPaymentDetail String  maxlength(2000)
+}
+
+entity PaymentParam {
+  @Id id UUID,
+  type PaymentParamType,
+  name String,
+  valueStr String, //every thing converted to string 
+  dataType DataType required
+}
+
+entity Header {
+    @Id id UUID,  
+    name String required,
+    valueStr String required
+}
+//ComputedApiRequest
+entity ApiRequest {
+    @Id id UUID,
+    uri String required,
+    body String,
+    method HttpMethod required
+}
+
+//Payment
+entity IntegrationOperation {
+  @Id id UUID, 
+  operationType OperationType // FETCH or NOTIFY
+}
+
+//in flow based its connection
+//change to FieldToRequestInputMapping
+entity IntegrationFieldMapping {
+  @Id id UUID, 
+    // Attributes and relationships can be defined here as needed
+}
+
+//create packet Integrated IntegrationFieldMapping
+
+
+enum IntegrationType {
+// Payment ("bill or tiket or other fixed amount") 
+// transfer ("amount set by customer not 3rd party eg. wallets")
+	PAYMENT,
+	TRANSFER,
+    NONE
+}
+
+enum RequestInputType {
+    HEADER,
+    BODY,
+    QUERY,
+    PATH,
+    NONE
+}
+enum Scope {
+    RESPONSE,
+    HEADER,
+    ERROR,
+    NONE
+}
+
+enum DataType {
+    COLLECTION,
+    STRING,
+    INT,
+    LONG,
+    DOUBLE,
+    BOOLEAN,
+    DATETIME,
+    NONE
+}
+
+enum HttpMethod {
+    POST,
+    GET,
+    PUT,
+    PATCH,
+    OPTIONS,
+    NONE
+}
+
+enum ContentType {
+    JSON,
+    SOAP,
+    XML,
+    NONE
+}
+
+enum AuthType {
+    NONE,
+    BASIC,
+    BEARER,
+    OAUTH,
+    NONE
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH, NONE
+}
+
+enum FormType {
+    INIT,
+    REMARK,
+    NONE
+}
+
+enum OperationType {
+    FETCH,
+    NOTIFY,
+    NONE
+
+}
+enum AutoUserValue {
+    PHONE_NUMBER,
+    EMAIL,
+    ACCOUNT_NUMBER,
+    NONE
+}
+enum Visiblity {
+    EVERYONE,
+    FOR_STUFF
+    VIP_CUSTOMERS,
+    FOR_TESTERS,
+    NONE
+}
+
+enum CoreTransferParams{
+    AMOUNT,
+    CREDIT_ACCOUNT,
+    REASON,
+    NONE
+}
+
+enum LogicalOperator {
+  EQUAL_TO, 
+  NOT_EQUAL_TO,
+  OBJECT_ EQUAL_TO,
+  OBJECT_NOT_EQUAL_TO,
+  GREATER_THAN,
+  LESS_THAN,
+  GREATER_THAN_OR_EQUAL_TO,
+  LESS_THAN_OR_EQUAL_TO,
+  NONE
+}
+
+enum PaymentParamType {
+  USER_INPUT,
+  FETCH_RESPONSE,
+  NONE
+}
+
+enum TransactionParams {
+   TRANSACTION_ID,
+   TRANSACTION_DETAIL,
+   TRANSACTION_AMOUNT,
+   NONE
+}
+
+enum RequestValueSource {
+    USER_INPUT,
+    PAYMENT_DETAIL,
+    TRANSACTION_ID,
+    TRANSACTION_DETAILS,
+    TRANSACTION_AMOUNT,
+    CUSTOMER_PHONE,
+    CUSTOMER_EMAIL,
+    CUSTOMER_ACCOUNT,
+    NONE
+}
+
+
+relationship OneToOne {
+  PaymentDetail to ApiRequest
+} 
+
+// channge to 
+relationship ManyToOne {
+  PaymentDetail to Operation
+}
+
+relationship OneToMany {
+  PaymentDetail {paymentParams} to PaymentParam
+} 
+
+relationship OneToMany {
+  ApiRequest {headers} to Header
+} 
+
+relationship ManyToOne {
+   ResponseOutput to Operation // //need Cascade all
+}
+
+relationship ManyToOne {
+  RequestInput to Operation //need Cascade all
+}
+
+relationship ManyToOne {
+  Operation to ApiIntegration,  //need Cascade all
+}
+
+relationship ManyToOne {
+  FormUi to ThirdPartyIntegration  //need Cascade all
+}
+
+relationship ManyToOne{
+    Field to FormUi    //need Cascade all
+}
+
+relationship ManyToOne {
+  Field to FieldUIMetaData //no cascade
+}
+
+//relationship ManyToMany { Field to RequestInput }
+
+relationship ManyToOne {
+    IntegrationOperation to ThirdPartyIntegration // no need just null
+    IntegrationOperation to Operation // no need just null
+}
+
+relationship ManyToOne {
+    IntegrationFieldMapping to IntegrationOperation
+    IntegrationFieldMapping to Field
+    IntegrationFieldMapping to RequestInput
+}
+
+relationship OneToMany {
+    Menu{children} to Menu{parent}
+}
+
+relationship ManyToMany {
+    Menu{dynamicPaymentMenus} to ThirdPartyIntegration{categoryMenus}
+}
+
+
+service all with serviceImpl
+
+
