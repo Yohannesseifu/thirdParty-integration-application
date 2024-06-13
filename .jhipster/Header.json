@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20240613142308"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valueStr",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Header",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

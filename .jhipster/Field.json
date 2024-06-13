@@ -1,0 +1,83 @@
+{
+  "annotations": {
+    "changelogDate": "20240613142259"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValues": "COLLECTION,STRING,INT,LONG,DOUBLE,BOOLEAN,DATETIME,NONE"
+    },
+    {
+      "fieldName": "isUnique",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "maxLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maxValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRequired",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "transferCoreMapping",
+      "fieldType": "CoreTransferParams",
+      "fieldValues": "AMOUNT,CREDIT_ACCOUNT,REASON,NONE"
+    },
+    {
+      "fieldName": "sortOrder",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Field",
+  "relationships": [
+    {
+      "otherEntityName": "formUi",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "formUi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "fieldUIMetaData",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "fieldUIMetaData",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "integrationFieldMapping",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "integrationFieldMapping",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
